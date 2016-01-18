@@ -31,12 +31,11 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 # Install Karaf
 #
 
-RUN wget http://repo1.maven.org/maven2/org/apache/karaf/apache-karaf-minimal/${KARAF_VERSION}/apache-karaf-minimal-${KARAF_VERSION}.tar.gz -O /tmp/karaf.tar.gz \
+RUN wget http://repo1.maven.org/maven2/org/apache/karaf/apache-karaf/${KARAF_VERSION}/apache-karaf-${KARAF_VERSION}.tar.gz -O /tmp/karaf.tar.gz \
  && tar xzf /tmp/karaf.tar.gz -C /opt/ \
- && ln -s /opt/apache-karaf-minimal-${KARAF_VERSION} /opt/karaf \
+ && ln -s /opt/apache-karaf-${KARAF_VERSION} /opt/karaf \
  && rm /tmp/karaf.tar.gz
 
 EXPOSE 8080 8181
 
 CMD ["/opt/karaf/bin/karaf"]
-
